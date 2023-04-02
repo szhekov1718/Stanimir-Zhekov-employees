@@ -1,0 +1,29 @@
+﻿@model IEnumerable<SirmaAssignment.DAL.Models.EmployeePairs>
+
+@{
+    ViewData["Title"] = "Empployees working together the longest time";
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Employee ID #1</th>
+            <th scope="col">Employee ID #2</th>
+            <th scope="col">Project ID</th>
+            <th scope="col">Days Worked</th>
+        </tr>
+    </thead>
+    @{
+        foreach (var employeePair in this.Model)
+        {
+            <tbody>
+                <tr class="table-active">
+                    <td>@employeePair.FirstEmployeeID</td>
+                    <td>@employeePair.SecondEmployeeID</td>
+                    <td>@employeePair.ProjectID</td>
+                    <td>@employeePair.DaysWorkingTogether</td>
+                </tr>
+            </tbody>
+        }
+    }
+</table>
